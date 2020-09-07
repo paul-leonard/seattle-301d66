@@ -6,7 +6,7 @@ const leftImage = document.getElementById('left');
 const centerImage = document.getElementById('center');
 const rightImage = document.getElementById('right');
 
-const allProducts = [];
+let allProducts = [];
 const container = document.getElementById('image_container');
 const viewed = [];
 const labels = [];
@@ -41,7 +41,7 @@ function displayPics(){
   // ANSWER: the deleted line of code called console log to print the value of 'rando'.  The variable rando was originally defined as a var on line 33.  As a var, it was able to be used for this console log on line 38 because it was within the same function.  However, when the creation of rando was changed from var to let, the scope of rando changed from the full function to only the code block it is defined within.  The code block it is defined within consists only of the while loop that starts on line 32 and runs till line 37.
   console.log(viewed);
 
-  for (const i = 0; i < 3; i++){
+  for (let i = 0; i < 3; i++){
     const temp = viewed.shift();
     pics[i].src = allProducts[temp].path;
     pics[i].id = allProducts[temp].name;
@@ -129,7 +129,7 @@ if(localStorage.busmall){
   allProducts = JSON.parse(localStorage.busmall);
 } else {
   console.log('There is no local storage data; initialize app by creating instances');
-  for(const i = 0; i < names.length; i++) {
+  for(let i = 0; i < names.length; i++) {
     new Product(names[i]);
   }
 }
