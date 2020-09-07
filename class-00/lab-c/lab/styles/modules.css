@@ -1,0 +1,77 @@
+#logo {
+  color: black;
+  text-decoration: none;
+}
+
+#logo h1 {
+  padding-left: 50px;
+  font-family: 'Yellowtail', cursive;
+  font-size: 2.4em;
+}
+
+#slogan {
+  color: #a3a4a2;
+  font-family: 'Abel', sans-serif;
+  font-size: .65em;
+  text-transform: uppercase;
+}
+
+hr {
+  background-image: url('../img/hr.png');
+}
+
+.print, .date {
+  color: #a9a8a5;
+  font-family: 'Abel', sans-serif;
+  font-size: .8em;
+  margin: 0;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 33px;
+}
+
+.print {
+  text-decoration: none;
+  padding-left: 30px;
+}
+
+.print img {
+  margin-right: 3px;
+}
+
+.recipe {
+  letter-spacing: .1em;
+  font-family: 'Patrick Hand', cursive;
+  color: #666a42;
+  background-image: url("img/list-bg.png");
+}
+
+.recipe li {
+  font-size: 1.3em;
+  line-height: 31px;
+}
+
+aside h3 {
+  font-size: 1.6em;
+  color: #555;
+}
+
+aside button {
+  font-family: 'Abel', sans-serif;
+  text-transform: uppercase;
+  background: #b8705a;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+section hr {
+  border-bottom: 1px solid #eee;
+  height: 0;
+}
+
+footer section p{
+  padding: 50px 0;
+  line-height: 1.5em;
+  text-align: center;
+  color: #aaa;
+}

@@ -1,0 +1,71 @@
+#logo {
+  float: left;
+  padding-bottom: 25px;
+}
+
+#logo img {
+  float: left;
+}
+
+#slogan {
+  width: 250px;
+  padding-left: 55px;
+}
+
+nav ul {
+  float: right;
+}
+
+nav li {
+  float: left;
+  padding-right: 2px;
+}
+
+.date {
+  float: left;
+}
+
+.print {
+  float: right;
+}
+
+main p {
+  color: #333;
+  font-size: 1.2em;
+  line-height: 1.3em;
+  text-indent: 30px;
+  margin: 20px 0px;
+}
+
+.recipe {
+  height: 260px;
+  padding: 37px 0 0 60px;
+  margin: 40px 0;
+}
+
+.recipe li {
+  float: left;
+  width: 40%;
+}
+
+aside img {
+  float: left;
+}
+
+aside h3 {
+  padding-left: 100px;
+  padding-bottom: 10px;
+}
+
+aside p {
+  padding-left: 100px;
+  width: 65%;
+  margin: 0;
+  text-indent: 0;
+}
+
+aside button {
+  float: right;
+  padding: 15px 40px;
+  border: none;
+}
