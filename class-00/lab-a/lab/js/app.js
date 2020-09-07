@@ -35,9 +35,10 @@ function displayPics(){
       viewed.push(rando);
     }
   }
-  console.log(rando);
-  // TODO: In a sentence or two, explain why the previous line of code threw an error when we changed the variable declaration from `var to `let`.
+  // DELETED --->  console.log(rando);
+  // DONE: In a sentence or two, explain why the previous line of code threw an error when we changed the variable declaration from `var to `let`.
   // PUT YOUR RESPONSE IN THIS COMMENT
+  // ANSWER: the deleted line of code called console log to print the value of 'rando'.  The variable rando was originally defined as a var on line 33.  As a var, it was able to be used for this console log on line 38 because it was within the same function.  However, when the creation of rando was changed from var to let, the scope of rando changed from the full function to only the code block it is defined within.  The code block it is defined within consists only of the while loop that starts on line 32 and runs till line 37.
   console.log(viewed);
 
   for (let i = 0; i < 3; i++){
