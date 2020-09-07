@@ -112,8 +112,13 @@ let sum = function(a, b, c, d) {
   return a + b + c + d;
 };
 
-// TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sum(1, 2, 3, 4));
+// DONE: Uncomment the following line of code to see the output in the browser console
+console.log(sum(1, 2, 3, 4));
+
+let sum2 = (a, b, c, d) => a + b + c + d;
+
+console.log(sum2(1, 2, 3, 4));
+
 
 
 let objectLit = function() {
@@ -124,8 +129,17 @@ let objectLit = function() {
   };
 };
 
-// TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(objectLit());
+// DONE: Uncomment the following line of code to see the output in the browser console
+console.log(objectLit());
+
+let objectLit2 = () => ({
+  key1: 'value1',
+  key2: 'value2',
+  key3: 'value3',
+});
+
+console.log(objectLit2());
+
 
 
 let sumAndProduct = function(a, b) {
@@ -134,16 +148,36 @@ let sumAndProduct = function(a, b) {
   return [sum, product];
 };
 
-// TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sumAndProduct(3, 9));
+// DONE: Uncomment the following line of code to see the output in the browser console
+console.log(sumAndProduct(3, 9));
+
+
+// let sumAndProduct2 = (a, b) => ({
+//   a + b;
+//   a * b;
+// });
+
+// let sumAndProduct2 = (a, b) => (a + b, a * b);
+
+let sumAndProduct2 = (a, b) => [a + b, a * b];
+
+console.log(sumAndProduct2(3, 9));
+
 
 
 let message = function(name) {
   return `Hello, ${name}!`;
 };
 
-// TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(message('Allie'));
+// DONE: Uncomment the following line of code to see the output in the browser console
+console.log(message('Allie'));
+
+
+let message2 = name => `Hello, ${name}!`;
+
+console.log(message2('Allie'));
+
+
 
 
 let Student = function(name, age, hometown) {
@@ -154,23 +188,44 @@ let Student = function(name, age, hometown) {
 
 let joe = new Student('Joe', 'Schmoe', 100);
 
-// TODO: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
-// console.log(joe);
+console.log(joe);
 
-// TODO: After viewing the previous console.log(), return the code to a working state.
+// arrow functions do not change the current 'this'; and therefore arrow functions are not supposed to be used as object constructors
+// let Student2 = (name, age, hometown) => ({
+//   Student2.name = name;
+//   Student2.age = age;
+//   Student2.hometown = hometown;
+// });
 
+// let Student2 = (name, age, hometown) => ({
+//   joe2.name = name;
+//   joe2.age = age;
+//   joe2.hometown = hometown;
+// });
 
+// let joe2 = new Student2('Joe', 'Schmoe', 100);
+
+// console.log(joe2);
+
+// DONE: After viewing the previous console.log(), return the code to a working state.
+
+// I tried two other ways since I knew 'this' was not the reference we needed inside of the constructor function.  Neither worked, so as we had read on MDN, arrow functions should not be used as object constructors because 'this' does not change within arrow functions.  It points to the 'this' that existed before the arrow function was called or the DOM if no other 'this' had be defined.
 
 Student.prototype.greeting = function() {
   return `Hi, my name is ${this.name}`;
 };
 
-// TODO: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
 
-// TODO: After viewing the previous console.log(), return the code to a working state.
+// Student.prototype.greeting2 = () => `Hi, my  name is ${this.name}`;
+// console.log(joe.greeting2());
+// This method on 224-225 did not throw an error, but it did not print a name.  It just said "Hi, my name is".  This is because arrow functions do not point to the correct "this".
+
+// DONE: After viewing the previous console.log(), return the code to a working state.
 
 
 
@@ -178,9 +233,12 @@ Student.courseName = function() {
   return 'This student is enrolled in Code 301.';
 };
 
-// TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+// DONE: Uncomment the following line of code to see the output in the browser console
+console.log(Student.courseName());
 
+Student.courseName2 = () => 'This student is enrolled in Code 301.';
+console.log(Student.courseName2());
+// This method does not make use of "this" and so it worked.  However, I am not sure if it is a good practice to use arrow functions to define methods.
 
 
 // STEP 11
