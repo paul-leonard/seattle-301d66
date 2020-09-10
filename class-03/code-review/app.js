@@ -82,9 +82,9 @@ function generateDropdown(){
 
 function handleChange(){
 
-    $('section').hide();
-    $(`section[class=${this.value}]`).show();
-  
+$('section').hide();
+$(`section[class=${this.value}]`).show();
+
 }
 
 $('select').on('change', handleChange);

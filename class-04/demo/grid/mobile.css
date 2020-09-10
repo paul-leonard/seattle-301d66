@@ -1,0 +1,40 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  width: 500px;
+  margin: auto;
+}
+
+header{
+  border: 1px solid black;
+  height: 40px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+aside{
+  border: 1px solid black;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main section{
+  border: 1px solid red;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer{
+  border: 1px dotted pink;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
