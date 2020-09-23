@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 const pg = require('pg');
 require('ejs');
+const methodOverride = require('method-override');
 
 const client = new pg.Client(process.env.DATABASE_URL);
 client.on('error', error => {
@@ -14,6 +15,7 @@ client.on('error', error => {
 // middleware
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
 
 const PORT = process.env.PORT;
 
@@ -22,6 +24,7 @@ app.get('/', renderHomePage); // pages/index.ejs
 app.get('/add', showForm); // pages/layout/add-view.ejs
 app.post('/add', collectFormInformation);
 app.get('/task/:task_id', getOneTask); // pages/layout/detail-view.ejs
+app.put('/update/:task_id', updateOneTask);
 
 function renderHomePage(request, response){
   // go into the database
@@ -81,6 +84,20 @@ function getOneTask(request, response){
       const myChosenTask = results.rows[0];
       response.render('pages/layout/detail-view', {task: myChosenTask});
     })
+}
+
+function updateOneTask(request, response){
+  const id = request.params.task_id;
+  const {title, description, status} = request.body;
+  // go into the database
+  // find the task with that id
+  // update that task
+  // redirect back to the updated task
+
+  let sql = 'UPDATE tasks SET title=$1, description=$2, status=$3 WHERE id=$4;';
+  let safeValues = [title, description, status, id];
+  client.query(sql, safeValues);
+  response.status(200).redirect(`/task/${id}`);
 }
 
 client.connect()

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book App</title>
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/base.css" />
+  <link rel="stylesheet" href="/styles/modules.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <main>
+    <h2>Total Books in Database: <%= renderedContent.length %></h2>
+    <ul>
+      <% renderedContent.forEach(book => { %>
+        <li><img src="<%= book.image_url %>" alt="<%= book.title %>">
+       <p id="title"> <%= book.title %> </p>
+       <p id="author"><%= book.author %> </p>
+       <p><%= book.description %></p>
+       <button><a href="/books/<%= book.id %>">View Details</a></button></li>
+      <% }) %>
+    </ul>
+  </main>
+</body>
+</html>

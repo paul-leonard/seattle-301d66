@@ -9,5 +9,16 @@
   <h1><%= task.title %></h1>
   <p><%= task.description %></p>
   <p><%= task.status %></p>
+
+  <h2>Update Task</h2>
+  <form action="/update/<%= task.id %>?_method=PUT" method="post">
+    <input type="text" name="title" value="<%= task.title %>" placeholder="task name" />
+
+    <input type="text" name="description" value="<%= task.description %>" placeholder="task description" />
+
+    <input type="text" name="status" value="<%= task.status %>" placeholder="status" />
+
+    <button type="submit">Update</button>
+  </form>
 </body>
 </html>
