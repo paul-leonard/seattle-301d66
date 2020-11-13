@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../../layout/header.ejs') %>
+</head>
+<body>
+    <h1><%= myChosenBook.title %></h1>
+    <p><%= myChosenBook.description %></p>
+    <p><%= myChosenBook.author %></p>
+    <img src="<%= myChosenBook.image_url %>" alt="<%= myChosenBook.title %>">
+</body>
+</html>
